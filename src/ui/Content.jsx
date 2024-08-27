@@ -1,7 +1,5 @@
-const Content = ({children}) => {
-  return (
-    <div className="flex-1 flex-col gap-5">{children}</div>
-  )
-}
+const Content = ({ children }) => {
+  return <div className="flex-1 flex-col gap-6">{children}</div>;
+};
 
-export default Content
+export default Content;
