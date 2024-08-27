@@ -7,7 +7,7 @@ const DonutChart = ({ darkMode }) => {
         type: "donut",
         height: 350,
       },
-      labels: ["Desktop", "Tablet", "Mobile"],
+      labels: ["Book", "Users", "Category"],
       colors: ["#FF5733", "#33FF57", "#3357FF"],
       legend: {
         position: "bottom",

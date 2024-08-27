@@ -1,32 +1,37 @@
-import React from 'react'
-import Header from './Components/Header/Header'
-import { useState } from 'react'
-import Sidebar from './Components/Sidebar/Sidebar';
-import Main from './ui/Main';
-import Content from './ui/Content';
-import Profile from './Components/Profile/Profile';
+import React from "react";
+import Header from "./Components/Header/Header";
+import { useState } from "react";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Main from "./ui/Main";
+import Content from "./ui/Content";
+import Profile from "./Components/Profile/Profile";
+import Stats from "./Components/Stats/Stats";
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const toggleDarkMode =() =>{
+  const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-  }
-  const toggleSideBar = ()=>{
+  };
+  const toggleSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen);
-  }
+  };
   return (
-   <div className= {`${darkMode && "dark"} font-quickSand`}>
-    <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} 
-    toggleSideBar ={toggleSideBar} />
+    <div className={`${darkMode && "dark"} font-quickSand`}>
+      <Header
+        toggleDarkMode={toggleDarkMode}
+        darkMode={darkMode}
+        toggleSideBar={toggleSideBar}
+      />
       <Sidebar isSideBarOpen={isSideBarOpen} />
-      <Main >
+      <Main>
         <Content>
-          Main Content
+          <Stats darkMode={darkMode} />
+          <div className="flex flex-col gap-3 lg:flex-row"></div>
         </Content>
         <Profile />
-        </Main>
-   </div>
-  )
-}
+      </Main>
+    </div>
+  );
+};
 
-export default App
+export default App;
